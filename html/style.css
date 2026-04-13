@@ -1,0 +1,37 @@
+.menu-home,
+.menu-home a {
+  color: red;
+}
+.menu-contact,
+.menu-contact a {
+  color: green;
+}
+.menu-about,
+.menu-about a {
+  color: blue;
+}
+.menu-download a {
+  color: white;
+  background-color: orange;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: center;
+}
+th {
+  background-color: lightgray;
+}
+td:first-child {
+  text-align: justify;
+}
+.th-bulan,
+.th-hasil {
+  background-color: lightblue;
+  font-weight: bold;
+}
