@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leave a Reply</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="title-block">
+        <h1>Leave a Reply</h1>
+        <div class="line"></div>
+      </div>
+      <p class="subtitle">
+        Your email address will not be published. Required fields are marked *
+      </p>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      <script>
+        window.flashMessages = {{ messages | tojson }};
+      </script>
+      {% endwith %}
+
+      <form id="comment-form" action="{{ url_for('index') }}" method="post">
+        <div class="field">
+          <label for="comment">Comment *</label>
+          <textarea id="comment" name="comment" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="field">
+          <label for="website">Website</label>
+          <input type="url" id="website" name="website" />
+        </div>
+
+        <label class="save" for="save-info">
+          <input type="checkbox" id="save-info" name="save-info" />
+          <span>
+            Save my name, email, and website in this browser for the next time I
+            comment.
+          </span>
+        </label>
+
+        <button type="submit">Post Comment</button>
+      </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>
