@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar</title>
+  </head>
+  <body>
+    <h1>Data Pendaftaran</h1>
+    <p><b>Nama</b>: <span id="vNama">-</span></p>
+    <p><b>Jenis Kelamin</b>: <span id="vJeniskelamin">-</span></p>
+    <p><b>Agama</b>: <span id="vAgama">-</span></p>
+    <p><b>Biografi</b>: <span id="vBiografi">-</span></p>
+    <p><b>Portofolio</b>: <span id="vPortofolio">-</span></p>
+    <p><b>Tanggal Lahir</b>: <span id="vTanggalLahir">-</span></p>
+    <p><b>Umur</b>: <span id="vUmur">-</span></p>
+    <p><b>Username</b>: <span id="vUsername">-</span></p>
+    <p><b>Email</b>: <span id="vEmail">-</span></p>
+    <p><b>Password</b>: <span id="vPassword">-</span></p>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      document.getElementById("vNama").textContent =
+        params.get("nama") || "(kosong)";
+      document.getElementById("vJeniskelamin").textContent =
+        params.get("jeniskelamin") || "(kosong)";
+      document.getElementById("vAgama").textContent =
+        params.get("agama") || "(kosong)";
+      document.getElementById("vBiografi").textContent =
+        params.get("biografi") || "(kosong)";
+      document.getElementById("vPortofolio").textContent =
+        params.get("portofolio") || "(kosong)";
+      document.getElementById("vTanggalLahir").textContent =
+        params.get("tanggallahir") || "(kosong)";
+      document.getElementById("vUmur").textContent = params.get("umur") || "(kosong)";
+      document.getElementById("vUsername").textContent =
+        params.get("username") || "(kosong)";
+      document.getElementById("vEmail").textContent =
+        params.get("email") || "(kosong)";
+      document.getElementById("vPassword").textContent =
+        params.get("password") || "(kosong)";
+
+      alert("Sukses! Data pendaftaran berhasil dikirim.");
+    </script>
+  </body>
+</html>

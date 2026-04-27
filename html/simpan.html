@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Tersimpan</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .row {
+        margin-bottom: 8px;
+      }
+
+      .label {
+        display: inline-block;
+        width: 90px;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hasil Submit</h1>
+
+    <div class="row"><span class="label">Nama</span>: <span id="vNama">-</span></div>
+    <div class="row"><span class="label">Subject</span>: <span id="vSubject">-</span></div>
+    <div class="row"><span class="label">Email</span>: <span id="vEmail">-</span></div>
+    <div class="row"><span class="label">Message</span>: <span id="vMessage">-</span></div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      document.getElementById("vNama").textContent = params.get("nama") || "(kosong)";
+      document.getElementById("vSubject").textContent = params.get("subject") || "(kosong)";
+      document.getElementById("vEmail").textContent = params.get("email") || "(kosong)";
+      document.getElementById("vMessage").textContent = params.get("message") || "(kosong)";
+    </script>
+  </body>
+</html>

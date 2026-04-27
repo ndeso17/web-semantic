@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leave a Reply</title>
+    <style>
+      body {
+        margin: 0;
+        background: #ffffff;
+        color: #222;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+      }
+
+      .wrap {
+        max-width: 560px;
+        margin: 48px auto;
+        padding: 0 18px;
+      }
+
+      .title-block {
+        display: inline-block;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 42px;
+        font-weight: 500;
+      }
+
+      .line {
+        width: 110%;
+        height: 3px;
+        background: linear-gradient(to right, #7a1f1f 20%, #b9bcc4 20%);
+        margin: 12px 0 22px;
+      }
+
+      .subtitle {
+        margin: 0 0 24px;
+        font-size: 19px;
+      }
+
+      .field {
+        margin-bottom: 24px;
+      }
+
+      label {
+        display: inline-block;
+        margin-bottom: 9px;
+        font-size: 27px;
+        font-weight: 600;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="url"],
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #d8d8e3;
+        border-radius: 6px;
+        padding: 12px 14px;
+        font-size: 22px;
+      }
+
+      textarea {
+        min-height: 170px;
+        resize: vertical;
+      }
+
+      .save {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 15px;
+        margin-bottom: 28px;
+      }
+
+      .save input {
+        width: 20px;
+        height: 20px;
+      }
+
+      button {
+        background: #0b79d0;
+        color: #fff;
+        border: 1px solid #0868b3;
+        border-radius: 6px;
+        padding: 12px 20px;
+        font-size: 17px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="title-block">
+        <h1>Leave a Reply</h1>
+        <div class="line"></div>
+      </div>
+      <p class="subtitle">
+        Your email address will not be published. Required fields are marked *
+      </p>
+
+      <form action="#" method="post">
+        <div class="field">
+          <label for="comment">Comment *</label>
+          <textarea id="comment" name="comment" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="field">
+          <label for="website">Website</label>
+          <input type="url" id="website" name="website" />
+        </div>
+
+        <label class="save" for="save-info">
+          <input type="checkbox" id="save-info" name="save-info" />
+          <span>
+            Save my name, email, and website in this browser for the next time I
+            comment.
+          </span>
+        </label>
+
+        <button type="submit">Post Comment</button>
+      </form>
+    </div>
+  </body>
+</html>

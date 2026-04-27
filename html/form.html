@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+      }
+
+      fieldset {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="loginForm">
+      <fieldset>
+        <legend>Login</legend>
+        <p>
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username..."
+            required
+          />
+        </p>
+        <p>
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password..."
+            required
+          />
+        </p>
+        <p>
+          <label for="">
+            <input
+              type="checkbox"
+              id="remember"
+              name="remember"
+              value="remember"
+            />
+            Remember me
+          </label>
+        </p>
+        <p>
+          <input type="submit" name="submit" value="Login" />
+        </p>
+      </fieldset>
+    </form>
+    <script>
+      const loginForm = document.getElementById("loginForm");
+
+      loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const remember = document.getElementById("remember").checked
+          ? "yes"
+          : "no";
+
+        const params = new URLSearchParams({
+          username,
+          password,
+          remember,
+        });
+
+        window.location.href = `login.html?${params.toString()}`;
+      });
+    </script>
+  </body>
+</html>

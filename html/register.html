@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form id="registerForm" style="max-width: 620px">
+      <fieldset>
+        <legend>Register</legend>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 130px 14px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 10px;
+          "
+        >
+          <label for="nama">Nama</label>
+          <span>:</span>
+          <input
+            type="text"
+            id="nama"
+            name="nama"
+            placeholder="Nama lengkap..."
+            required
+          />
+        </div>
+        <!-- Jenis Kelamin dengan radio button -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 130px 14px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 10px;
+          "
+        >
+          <label for="jeniskelamin">Jenis Kelamin</label>
+          <span>:</span>
+          <div>
+            <label for="jk1">
+              <input
+                type="radio"
+                id="jk1"
+                name="jeniskelamin"
+                value="laki-laki"
+                required
+              />
+              Laki-laki
+            </label>
+            <label for="jk2" style="margin-left: 12px">
+              <input
+                type="radio"
+                id="jk2"
+                name="jeniskelamin"
+                value="perempuan"
+                required
+              />
+              Perempuan
+            </label>
+          </div>
+        </div>
+        <!-- Agama dengan Selection Option -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 130px 14px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 10px;
+          "
+        >
+          <label for="agama">Agama</label>
+          <span>:</span>
+          <select name="agama" id="agama" required>
+            <option value="">Pilih agama...</option>
+            <option value="islam">Islam</option>
+            <option value="kristen">Kristen</option>
+            <option value="protestan">Protestan</option>
+            <option value="hindu">Hindu</option>
+            <option value="budha">Budha</option>
+            <option value="konghucu">Konghucu</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+        </div>
+        <!-- Biografi dengan text area -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 130px 14px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 10px;
+          "
+        >
+          <label for="biografi">Biografi</label>
+          <span>:</span>
+          <textarea
+            id="biografi"
+            name="biografi"
+            placeholder="Tulis biografi Anda..."
+            required
+            style="width: 100%"
+          ></textarea>
+        </div>
+        <!-- Alamat Portofolio -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 130px 14px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 10px;
+          "
+        >
+          <label for="portofolio">Link Portofolio</label>
+          <span>:</span>
+          <input
+            type="url"
+            id="portofolio"
+            name="portofolio"
+            placeholder="https://contoh.com/portofolio"
+            required
+          />
+        </div>
+        <!-- Tanggal Lahir -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 130px 14px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 10px;
+          "
+        >
+          <label for="tanggallahir">Tanggal Lahir</label>
+          <span>:</span>
+          <input type="date" id="tanggallahir" name="tanggallahir" required />
+        </div>
+        <!-- Umur (otomatis dari tanggal lahir) -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 130px 14px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 10px;
+          "
+        >
+          <label for="umur">Umur</label>
+          <span>:</span>
+          <input
+            type="number"
+            id="umur"
+            name="umur"
+            min="10"
+            max="90"
+            placeholder="Umur..."
+            readonly
+          />
+        </div>
+        <hr />
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 130px 14px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 10px;
+          "
+        >
+          <label for="username">Username</label>
+          <span>:</span>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username..."
+            required
+          />
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 130px 14px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 10px;
+          "
+        >
+          <label for="email">Email</label>
+          <span>:</span>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email..."
+            required
+          />
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 130px 14px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 10px;
+          "
+        >
+          <label for="password">Password</label>
+          <span>:</span>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password..."
+            required
+          />
+        </div>
+        <p>
+          <input type="submit" name="submit" value="Login" />
+        </p>
+      </fieldset>
+    </form>
+    <script>
+      const registerForm = document.getElementById("registerForm");
+      const tanggalLahirInput = document.getElementById("tanggallahir");
+      const umurInput = document.getElementById("umur");
+
+      function hitungUmur(tanggalLahir) {
+        if (!tanggalLahir) return "";
+
+        const birthDate = new Date(tanggalLahir);
+        const today = new Date();
+
+        let umur = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+        const dayDiff = today.getDate() - birthDate.getDate();
+
+        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+          umur -= 1;
+        }
+
+        return umur >= 0 ? umur : "";
+      }
+
+      tanggalLahirInput.addEventListener("change", function () {
+        umurInput.value = hitungUmur(tanggalLahirInput.value);
+      });
+
+      tanggalLahirInput.addEventListener("input", function () {
+        umurInput.value = hitungUmur(tanggalLahirInput.value);
+      });
+
+      umurInput.value = hitungUmur(tanggalLahirInput.value);
+
+      registerForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nama = document.getElementById("nama").value;
+        const selectedGender = document.querySelector(
+          'input[name="jeniskelamin"]:checked',
+        );
+        const jeniskelamin = selectedGender ? selectedGender.value : "";
+        const agama = document.getElementById("agama").value;
+        const biografi = document.getElementById("biografi").value;
+        const portofolio = document.getElementById("portofolio").value;
+        const tanggallahir = tanggalLahirInput.value;
+        const umur = umurInput.value || hitungUmur(tanggallahir);
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const params = new URLSearchParams({
+          nama,
+          jeniskelamin,
+          agama,
+          biografi,
+          portofolio,
+          tanggallahir,
+          umur,
+          username,
+          email,
+          password,
+        });
+
+        window.location.href = `daftar.html?${params.toString()}`;
+      });
+    </script>
+  </body>
+</html>

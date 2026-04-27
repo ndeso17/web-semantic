@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Result</title>
+  </head>
+  <body>
+    <h1>Data Login</h1>
+    <p><strong>Username:</strong> <span id="showUsername">-</span></p>
+    <p><strong>Password:</strong> <span id="showPassword">-</span></p>
+    <p><strong>Remember me:</strong> <span id="showRemember">-</span></p>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      document.getElementById("showUsername").textContent =
+        params.get("username") || "(kosong)";
+      document.getElementById("showPassword").textContent =
+        params.get("password") || "(kosong)";
+      document.getElementById("showRemember").textContent =
+        params.get("remember") || "no";
+    </script>
+  </body>
+</html>

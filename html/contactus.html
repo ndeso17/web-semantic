@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Contact</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      form {
+        max-width: 620px;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 120px 14px 1fr;
+        align-items: start;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+      }
+
+      #saveStatus {
+        margin-left: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="contactForm">
+      <fieldset>
+        <legend>Contact</legend>
+
+        <div class="row">
+          <label for="nama">Nama</label>
+          <span>:</span>
+          <input
+            type="text"
+            id="nama"
+            name="nama"
+            placeholder="Nama..."
+            required
+          />
+        </div>
+
+        <div class="row">
+          <label for="subject">Subject</label>
+          <span>:</span>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Subject..."
+            required
+          />
+        </div>
+
+        <div class="row">
+          <label for="email">Email</label>
+          <span>:</span>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email..."
+            required
+          />
+        </div>
+
+        <div class="row">
+          <label for="message">Message</label>
+          <span>:</span>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Message..."
+            required
+          ></textarea>
+        </div>
+
+        <input type="submit" name="submit" value="Send" />
+        <span id="saveStatus" aria-live="polite"></span>
+      </fieldset>
+    </form>
+
+    <script>
+      const contactForm = document.getElementById("contactForm");
+      const saveStatus = document.getElementById("saveStatus");
+
+      contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const payload = {
+          nama: document.getElementById("nama").value.trim(),
+          subject: document.getElementById("subject").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          message: document.getElementById("message").value.trim(),
+          savedAt: new Date().toISOString(),
+        };
+
+        localStorage.setItem("contactus_last_save", JSON.stringify(payload));
+        saveStatus.textContent = "Data tersimpan.";
+
+        const params = new URLSearchParams(payload);
+        window.location.href = `simpan.html?${params.toString()}`;
+      });
+    </script>
+  </body>
+</html>
