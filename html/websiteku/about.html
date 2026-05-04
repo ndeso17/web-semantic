@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - KHILMY FIRDAUS ROMADON</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="contact.html">Contact</a>
+      <a href="download.html">Download</a>
+    </nav>
+
+    <hr />
+
+    <article>
+      <h1>About Me</h1>
+      <p>Saya adalah mahasiswa semester 4 jurusan teknik informatika</p>
+    </article>
+    <p>
+      Saya masih pemula dalam dunia programming namun saya selalu berusaha untuk
+      belajar saya memiliki minat dalam bidang teknologi dan saya ingin menjadi
+      developer
+    </p>
+    <p>
+      saya ingin menguasai html dan css agar bisa membuat website dan aplikasi
+      yang bermanfaat bagi masyarakat luas dan simak video tentang saya
+    </p>
+    <!-- embed video youtube -->
+    <p style="text-align: center">
+      <iframe
+        id="yt-player"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/U3_S1oMHDCU?enablejsapi=1&amp;autoplay=1&amp;controls=1&amp;playsinline=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        allowfullscreen
+      ></iframe>
+    </p>
+
+    <hr />
+
+    <footer style="text-align: center">
+      <p>Copyright 2026 by Khilmy Firdaus Romadon</p>
+    </footer>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      const START_TIME = 0;
+      const END_TIME = 12;
+      let player;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player("yt-player", {
+          events: {
+            onReady: onPlayerReady,
+          },
+        });
+      }
+
+      function onPlayerReady() {
+        player.seekTo(START_TIME, true);
+        player.playVideo();
+
+        setInterval(() => {
+          if (
+            player &&
+            player.getCurrentTime &&
+            player.getCurrentTime() >= END_TIME
+          ) {
+            player.seekTo(START_TIME, true);
+            player.playVideo();
+          }
+        }, 250);
+      }
+    </script>
+  </body>
+</html>
