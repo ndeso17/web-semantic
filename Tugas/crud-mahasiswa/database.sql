@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS kampus;
+USE kampus;
+
+CREATE TABLE IF NOT EXISTS user (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(100) NOT NULL
+);
+
+INSERT INTO user (username, password)
+VALUES ('admin', '12345')
+ON DUPLICATE KEY UPDATE username = username;
+
+CREATE TABLE IF NOT EXISTS mahasiswa (
+  nim VARCHAR(10) PRIMARY KEY,
+  nama VARCHAR(50) NOT NULL,
+  jurusan VARCHAR(50) NOT NULL,
+  foto VARCHAR(100) DEFAULT NULL
+);

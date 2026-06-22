@@ -1,0 +1,51 @@
+:root{
+  --primary:#9d2b22;
+  --secondary:#55111c;
+  --accent:#681726;
+}
+
+.navbar,
+.btn-primary,
+.table thead{
+  background:var(--primary)!important;
+}
+
+.btn-primary{
+  border-color:var(--primary)!important;
+}
+
+.btn-primary:hover{
+  background:var(--secondary)!important;
+  border-color:var(--secondary)!important;
+}
+
+.btn-warning{
+  background:var(--accent)!important;
+  border-color:var(--accent)!important;
+  color:#fff!important;
+}
+
+.text-brand{
+  color:var(--primary)!important;
+}
+
+.card-header{
+  background:var(--primary)!important;
+  color:#fff!important;
+}
+
+.btn-outline-primary{
+  color:var(--primary)!important;
+  border-color:var(--primary)!important;
+}
+
+.btn-outline-primary:hover{
+  background:var(--primary)!important;
+  color:#fff!important;
+}
+
+.badge.bg-primary,
+.bg-primary,
+.text-bg-primary{
+  background:var(--primary)!important;
+}
